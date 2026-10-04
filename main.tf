@@ -49,7 +49,7 @@ resource "aws_security_group" "allow_ssh" {
 # 4. Główna maszyna EC2
 resource "aws_instance" "pytorch_machine" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = "t2.micro" # Darmowy tier
+  instance_type = "t3.micro" # Darmowy tier
   key_name      = aws_key_pair.deployer.key_name
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]
 
